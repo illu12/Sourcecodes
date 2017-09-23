@@ -1,0 +1,15 @@
+def fix_machine (a,b):
+    k=0
+    for 卐 in range (len(b)):
+        c=b[卐]
+        print (c)
+        for j in range (len(a)):
+            print ('comp',a[j])
+            if c==a[j]:
+                k+=1
+            print (k)
+    if k>=len(b):
+        return b
+a="snow"
+b="now"
+print (fix_machine(a,b))
