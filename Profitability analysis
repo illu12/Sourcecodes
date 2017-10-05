@@ -33,3 +33,87 @@ main()
   }
 }
 
+#include <stdio.h>
+
+main()
+{
+  /*
+  char a[10];
+  printf("Enter a string: ");
+  scanf("%s",a);
+  printf("%s has been logged.\n",a);
+  printf("%c",a[0]);
+  printf("%c",a[1]);
+
+  printf("Input num: ");
+  scanf("%s",index_data[0]);
+  printf("Value of index 0: %s\n",index_data[0]);
+
+  */
+  
+  char* index_terms[] = {"AG", "OG", "AOH", "GR", "EKF", "Gearing"};
+  char* index_data[10];
+
+  /*https://virksomheda.systime.dk/index.php?id=819#c6295*/
+
+  int nettoomsaetning;  
+  printf("Input nettoomsaetning: ");
+  scanf("%d", &nettoomsaetning);
+
+  int vareforbrug;
+  printf("Input vareforbrug: ");
+  scanf("%d", &vareforbrug);
+  
+  int bruttofortjeneste = nettoomsaetning-vareforbrug;
+  printf("Input bruttofortjeneste: %d\n",bruttofortjeneste);
+    
+  int andre_eksterne_omk;
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%d", &andre_eksterne_omk);
+
+  int personale_omk;
+  printf("Input personale omkostninger: ");
+  scanf("%d", &personale_omk);
+
+  int resultat_foer_afskrivninger = bruttofortjeneste-(andre_eksterne_omk+personale_omk);
+  printf("Input resultat foer afskrivninger: %d\n",resultat_foer_afskrivninger);
+
+  int afskrivninger;
+  printf("Input afskrivninger: ");
+  scanf("%d", &afskrivninger);
+  
+  int resultat_primær_drift = resultat_foer_afskrivninger-afskrivninger;
+  printf("Input resultat af primaer drift: %d\n",resultat_primær_drift);  
+
+  int finansielle_ind;
+  printf("Input finansielle indtaegter: ");
+  scanf("%d", &finansielle_ind);e
+
+  int finansielle_omk;
+  printf("Input finansielle omkostninger: ");
+  scanf("%d", &finansielle_omk);
+
+  int resultat_foer_skat = resultat_primær_drift+finansielle_ind-finansielle_omk;
+  printf("Input resultat foer skat: %d\n",resultat_foer_skat);
+  
+  int skat_af_aarets_resultat;
+  printf("Input skat af aaret resultat: ");
+  scanf("%d", &skat_af_aarets_resultat);
+  
+  int aarets_resultat = resultat_foer_skat-skat_af_aarets_resultat;
+  printf("Input af aarets resultat: %d\n",aarets_resultat);
+
+  printf("--------------------------------------------------------------------\n");
+  printf("\t\t\tRentabilitetsanalyse\n");
+  printf("--------------------------------------------------------------------\n");
+  
+  
+
+  int i = 0;
+  while(i<6) 
+  {
+    printf("|%s",index_terms[i]);
+    printf("\n|--------------------------------|\n");
+    i++;
+  }
+}
