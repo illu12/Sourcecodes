@@ -1,119 +1,264 @@
 #include <stdio.h>
+#include <stdlib.h>
 
+//Create function to display output.
+void display(char a[10], float b){
+	printf("%s\n", a);
+    printf("%f\n", b);
+  };
+  
 main()
 {
-  /*
-  char a[10];
-  printf("Enter a string: ");
-  scanf("%s",a);
-  printf("%s has been logged.\n",a);
-  printf("%c",a[0]);
-  printf("%c",a[1]);
-  */
+  int years;
+  printf("Amount of years: ");
+  scanf("%d",&years);
   
-  char* index_terms[] = {"AG", "OG", "AOH", "GR", "EKF", "Gearing"};
-  char* index_data[10];
-  
-  printf("Input num: ");
-  scanf("%s",index_data[0]);
-  printf("Value of index 0: %d\n",index_data[0]);
-
-  printf("Rentabilitetsanalyse\n");
-  printf("--------------------------------------------------------------------\n");
-
-  
-  
-
-  int i = 0;
-  while(i<6) 
-  {
-    printf("|%s",index_terms[i]);
-    printf("\n|--------------------------------|\n");
-    i++;
-  }
-}
-
-#include <stdio.h>
-
-main()
-{
-  /*
-  char a[10];
-  printf("Enter a string: ");
-  scanf("%s",a);
-  printf("%s has been logged.\n",a);
-  printf("%c",a[0]);
-  printf("%c",a[1]);
-
-  printf("Input num: ");
-  scanf("%s",index_data[0]);
-  printf("Value of index 0: %s\n",index_data[0]);
-
-  */
-  
-  char* index_terms[] = {"AG", "OG", "AOH", "GR", "EKF", "Gearing"};
-  char* index_data[10];
-
-  /*https://virksomheda.systime.dk/index.php?id=819#c6295*/
-
-  int nettoomsaetning;  
+  if(years == 1){
+   
+  float nettoomsaetning;  
   printf("Input nettoomsaetning: ");
-  scanf("%d", &nettoomsaetning);
+  scanf("%f", &nettoomsaetning);
 
-  int vareforbrug;
+  float vareforbrug;
   printf("Input vareforbrug: ");
-  scanf("%d", &vareforbrug);
+  scanf("%f", &vareforbrug);
   
-  int bruttofortjeneste = nettoomsaetning-vareforbrug;
-  printf("Input bruttofortjeneste: %d\n",bruttofortjeneste);
+  float bruttofortjeneste = nettoomsaetning-vareforbrug;
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste);
     
-  int andre_eksterne_omk;
+  float andre_eksterne_omk;
   printf("Input andre eksterne omkostninger: ");
-  scanf("%d", &andre_eksterne_omk);
+  scanf("%f", &andre_eksterne_omk);
 
-  int personale_omk;
+  float personale_omk;
   printf("Input personale omkostninger: ");
-  scanf("%d", &personale_omk);
+  scanf("%f", &personale_omk);
 
-  int resultat_foer_afskrivninger = bruttofortjeneste-(andre_eksterne_omk+personale_omk);
-  printf("Input resultat foer afskrivninger: %d\n",resultat_foer_afskrivninger);
+  float resultat_foer_afskrivninger = bruttofortjeneste-(andre_eksterne_omk+personale_omk);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger);
 
-  int afskrivninger;
+  float afskrivninger;
   printf("Input afskrivninger: ");
-  scanf("%d", &afskrivninger);
+  scanf("%f", &afskrivninger);
   
-  int resultat_primær_drift = resultat_foer_afskrivninger-afskrivninger;
-  printf("Input resultat af primaer drift: %d\n",resultat_primær_drift);  
+  float resultat_primaer_drift = resultat_foer_afskrivninger-afskrivninger;
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift);  
 
-  int finansielle_ind;
+  float finansielle_ind;
   printf("Input finansielle indtaegter: ");
-  scanf("%d", &finansielle_ind);e
+  scanf("%f", &finansielle_ind);
 
-  int finansielle_omk;
+  float finansielle_omk;
   printf("Input finansielle omkostninger: ");
-  scanf("%d", &finansielle_omk);
+  scanf("%f", &finansielle_omk);
 
-  int resultat_foer_skat = resultat_primær_drift+finansielle_ind-finansielle_omk;
-  printf("Input resultat foer skat: %d\n",resultat_foer_skat);
+  float resultat_foer_skat = resultat_primaer_drift+finansielle_ind-finansielle_omk;
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat);
   
-  int skat_af_aarets_resultat;
+  float skat_af_aarets_resultat;
   printf("Input skat af aaret resultat: ");
-  scanf("%d", &skat_af_aarets_resultat);
+  scanf("%f", &skat_af_aarets_resultat);
   
-  int aarets_resultat = resultat_foer_skat-skat_af_aarets_resultat;
-  printf("Input af aarets resultat: %d\n",aarets_resultat);
+  float aarets_resultat = resultat_foer_skat-skat_af_aarets_resultat;
+  printf("Input af aarets resultat: %f\n",aarets_resultat);
+
+  float gennemsnitlige_aktiver;
+  printf("Input gennemsnitlige aktiver: ");
+  scanf("%f",&gennemsnitlige_aktiver);
+
+  float gennemsnitlige_egenkapital;
+  printf("Input gennemsnitlige egenkapital: ");
+  scanf("%f",&gennemsnitlige_egenkapital);
+  
+  float gennemsnitlige_forpligtelser;
+  printf("Input gennemsnitlige forpligtelser: ");
+  scanf("%f",&gennemsnitlige_forpligtelser);
+
+  /*-----------------------------------------------------*/
+
+  float AG_calc = resultat_primaer_drift/gennemsnitlige_aktiver*100;
+  float OG_calc = resultat_primaer_drift/nettoomsaetning*100;
+  float AOH_calc = nettoomsaetning/gennemsnitlige_aktiver;
+  float EKF_calc = resultat_foer_skat/gennemsnitlige_egenkapital*100;
+  float GR_calc = finansielle_omk/gennemsnitlige_forpligtelser*100;
+  float Gearing_calc = gennemsnitlige_forpligtelser/gennemsnitlige_egenkapital;
+  
+  /*-----------------------------------------------------*/  
+  
+  struct desired_table{
+    char name[10];
+	float val;
+  };
+  
+  struct desired_table AG;
+  strcpy(AG.name, "AG");
+  AG.val = AG_calc;
+  
+  struct desired_table OG;
+  strcpy(OG.name, "OG");
+  OG.val = OG_calc;
+  
+  struct desired_table AOH;
+  strcpy(AOH.name, "AOH");
+  AOH.val = AOH_calc;
+  
+  struct desired_table EKF;
+  strcpy(EKF.name, "EKF");
+  EKF.val = EKF_calc;
+  
+  struct desired_table GR;
+  strcpy(GR.name, "GR");
+  GR.val = GR_calc;
+  
+  struct desired_table Gearing;
+  strcpy(Gearing.name, "Gearing");
+  Gearing.val = Gearing_calc;
+  
+/*-------------------------------------------------------*/
 
   printf("--------------------------------------------------------------------\n");
   printf("\t\t\tRentabilitetsanalyse\n");
   printf("--------------------------------------------------------------------\n");
   
-  
-
-  int i = 0;
-  while(i<6) 
-  {
-    printf("|%s",index_terms[i]);
-    printf("\n|--------------------------------|\n");
-    i++;
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",AG.name,AG.val);
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",OG.name,OG.val);
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",AOH.name,AOH.val);
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",EKF.name,EKF.val);
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",GR.name,GR.val);
+  printf("|---------------|\n");
+  printf("|%s\t|\t| %f |\n",Gearing.name,Gearing.val);
+  printf("|---------------|\n");
   }
+  if(years == 2){
+   
+  float nettoomsaetning;  
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning);
+
+  float vareforbrug;
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug);
+  
+  float bruttofortjeneste = nettoomsaetning-vareforbrug;
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste);
+    
+  float andre_eksterne_omk;
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk);
+
+  float personale_omk;
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk);
+
+  float resultat_foer_afskrivninger = bruttofortjeneste-(andre_eksterne_omk+personale_omk);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger);
+
+  float afskrivninger;
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger);
+  
+  float resultat_primaer_drift = resultat_foer_afskrivninger-afskrivninger;
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift);  
+
+  float finansielle_ind;
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind);
+
+  float finansielle_omk;
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk);
+
+  float resultat_foer_skat = resultat_primaer_drift+finansielle_ind-finansielle_omk;
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat);
+  
+  float skat_af_aarets_resultat;
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat);
+  
+  float aarets_resultat = resultat_foer_skat-skat_af_aarets_resultat;
+  printf("Input af aarets resultat: %f\n",aarets_resultat);
+
+  float gennemsnitlige_aktiver;
+  printf("Input gennemsnitlige aktiver: ");
+  scanf("%f",&gennemsnitlige_aktiver);
+
+  float gennemsnitlige_egenkapital;
+  printf("Input gennemsnitlige egenkapital: ");
+  scanf("%f",&gennemsnitlige_egenkapital);
+  
+  float gennemsnitlige_forpligtelser;
+  printf("Input gennemsnitlige forpligtelser: ");
+  scanf("%f",&gennemsnitlige_forpligtelser);
+
+  /*-----------------------------------------------------*/
+
+  float AG_calc = resultat_primaer_drift/gennemsnitlige_aktiver*100;
+  float OG_calc = resultat_primaer_drift/nettoomsaetning*100;
+  float AOH_calc = nettoomsaetning/gennemsnitlige_aktiver;
+  float EKF_calc = resultat_foer_skat/gennemsnitlige_egenkapital*100;
+  float GR_calc = finansielle_omk/gennemsnitlige_forpligtelser*100;
+  float Gearing_calc = gennemsnitlige_forpligtelser/gennemsnitlige_egenkapital;
+  
+  /*-----------------------------------------------------*/  
+  
+  struct desired_table{
+    char name[10];
+	float val;
+  };
+  
+  struct desired_table AG;
+  strcpy(AG.name, "AG");
+  AG.val = AG_calc;
+  
+  struct desired_table OG;
+  strcpy(OG.name, "OG");
+  OG.val = OG_calc;
+  
+  struct desired_table AOH;
+  strcpy(AOH.name, "AOH");
+  AOH.val = AOH_calc;
+  
+  struct desired_table EKF;
+  strcpy(EKF.name, "EKF");
+  EKF.val = EKF_calc;
+  
+  struct desired_table GR;
+  strcpy(GR.name, "GR");
+  GR.val = GR_calc;
+  
+  struct desired_table Gearing;
+  strcpy(Gearing.name, "Gearing");
+  Gearing.val = Gearing_calc;
+  
+/*-------------------------------------------------------*/
+
+  printf("--------------------------------------------------------------------\n");
+  printf("\t\t\tRentabilitetsanalyse\n");
+  printf("--------------------------------------------------------------------\n");
+  
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",AG.name,AG.val);
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",OG.name,OG.val);
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",AOH.name,AOH.val);
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",EKF.name,EKF.val);
+  printf("|---------------|\n");
+  printf("|%s\t\t|\t| %f |\n",GR.name,GR.val);
+  printf("|---------------|\n");
+  printf("|%s\t|\t| %f |\n",Gearing.name,Gearing.val);
+  printf("|---------------|\n");
+  }
+  
+  
+  
+  system("PAUSE"); 
 }
+
+
