@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+	printf("\nRentabilitetsanalyse\n");
+    printf("====================\n");
+	printf("\nYear\t\tAG\tOG\tAOH\tGR\tEKF\tGearing");
+	printf("\n---------------------------------------------------------------\n");
+	printf("Year one\t6\t12\t1.32\t14\t35\t0.98\n");
+	printf("Year two\t4\t8\t1.04\t22\t27\t1.11\n");
+}
