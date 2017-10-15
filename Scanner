@@ -1,0 +1,70 @@
+source = """Nettoomsætning og mange andre ting som produktionsomkostninger
+         RESULTATOPGØRELSERESULTATOPGØRELSEOG TOTALINDKOMSTOPGØRELSE FOR PERIODEN 1. JANUAR – 31. DECEMBER
+         Mio. kr. 2016 2015 2014RESULTATOPGØRELSENettoomsætning 111.780 107.927 88.806
+         Produktionsomkostninger 17.183 16.188 14.56"""
+
+targets = ["RESULTATOPGØRELSEN","Nettoomsætning","produktionsomkostninger"]
+
+
+
+#Scope the best restriction to search in
+def get_page(s,t):
+    i = 0
+    while(i<len(t)):
+        #Create start of restriction to search in
+        check_for_item = s.find(t[i])
+
+        #If target is found, finish the restriction and search for other items
+        if check_for_item != -1:     
+            s = s[check_for_item:check_for_item+100]
+            return get_item(s,t[i])
+	    
+            #Check for all elements in the restriction
+            
+
+            
+        elif check_for_item == -1:
+            return None
+            
+            
+    
+
+
+#Find targets from list
+def get_item(s,t):
+    found_targets = []
+    i = 0
+    while(i<len(t)):
+        start_item = s.find(t[i])
+        end_item = s.find(" ")
+        item = s[start_item:end_item]
+
+        #If the right item is found, add to list
+        if item == t[i]:
+            found_targets.Add(item)
+
+        #Else if item is multiple words, split up target and continue from last found item
+        #A target is max. 3 words, so two additional searches is needed in worst case.
+        elif item != t[i]:
+            start_item = s[end_item:]
+            start_item_int = start_item[0]
+            end_item = s.find(" ")
+            string = s[start_item_int:end_item]
+            item = item + string
+	    if item != t[i]:
+		start_item = s[end_item:]
+		start_item_int = start_item[0]
+                end_item = s.find(" ")
+                string = s[start_item_int:end_item]
+                item = item + string
+
+                if item == t[i]:
+                    found_targets.Add(item)
+                else:
+                    break
+        i = i + 1
+        return found_targets
+            
+            
+
+print(get_page(source,targets))
