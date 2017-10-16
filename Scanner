@@ -17,15 +17,11 @@ def get_page(s,t):
         #If target is found, finish the restriction and search for other items
         if check_for_item != -1:     
             s = s[check_for_item:check_for_item+100]
-            return get_item(s,t[i])
-	    
-            #Check for all elements in the restriction
-            
-
-            
+            return get_item(s,t[i])   
+            #Check for all elements in the restriction          
         elif check_for_item == -1:
             return None
-            
+    i = i + 1
             
     
 
@@ -41,30 +37,31 @@ def get_item(s,t):
 
         #If the right item is found, add to list
         if item == t[i]:
-            found_targets.Add(item)
+            found_targets.append(item)
 
         #Else if item is multiple words, split up target and continue from last found item
         #A target is max. 3 words, so two additional searches is needed in worst case.
         elif item != t[i]:
-            start_item = s[end_item:]
-            start_item_int = start_item[0]
+            s = s[end_item-1:]
+            start_item_int = s.find(" ")
             end_item = s.find(" ")
             string = s[start_item_int:end_item]
             item = item + string
-	    if item != t[i]:
-		start_item = s[end_item:]
-		start_item_int = start_item[0]
-                end_item = s.find(" ")
-                string = s[start_item_int:end_item]
-                item = item + string
 
-                if item == t[i]:
-                    found_targets.Add(item)
-                else:
-                    break
+            if item != t[i]:
+                    start_item = s[end_item-1:]
+                    start_item_int = s.find(" ")
+                    end_item = s.find(" ")
+                    string = s[start_item_int:end_item]
+                    item = item + string
+
+                    if item == t[i]:
+                        found_targets.Add(item)
+                    
+                        
         i = i + 1
-        return found_targets
+    return found_targets
             
             
-
+print(get_item(source,targets))
 print(get_page(source,targets))
