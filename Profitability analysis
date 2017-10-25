@@ -1,264 +1,907 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Create function to display output.
-void display(char a[10], float b){
-	printf("%s\n", a);
-    printf("%f\n", b);
-  };
+void main(){
+		
+//Variables for year one
+  float nettoomsaetning;
+  float vareforbrug;
+  float bruttofortjeneste = nettoomsaetning-vareforbrug;
+  float andre_eksterne_omk;
+  float personale_omk;
+  float resultat_foer_afskrivninger = bruttofortjeneste-(andre_eksterne_omk+personale_omk);
+  float afskrivninger;
+  float resultat_primaer_drift = resultat_foer_afskrivninger-afskrivninger;
+  float finansielle_ind;
+  float finansielle_omk;
+  float resultat_foer_skat = resultat_primaer_drift+finansielle_ind-finansielle_omk;
+  float skat_af_aarets_resultat;
+  float aarets_resultat = resultat_foer_skat-skat_af_aarets_resultat;
   
-main()
-{
+//Variables for year two
+  float nettoomsaetning_2;
+  float vareforbrug_2;
+  float bruttofortjeneste_2 = nettoomsaetning_2-vareforbrug_2;
+  float andre_eksterne_omk_2;
+  float personale_omk_2;
+  float resultat_foer_afskrivninger_2 = bruttofortjeneste_2-(andre_eksterne_omk_2+personale_omk_2);
+  float afskrivninger_2;
+  float resultat_primaer_drift_2 = resultat_foer_afskrivninger_2-afskrivninger_2;
+  float finansielle_ind_2;
+  float finansielle_omk_2;
+  float resultat_foer_skat_2 = resultat_primaer_drift_2+finansielle_ind_2-finansielle_omk_2;
+  float skat_af_aarets_resultat_2;
+  float aarets_resultat_2 = resultat_foer_skat_2-skat_af_aarets_resultat_2;
+  
+//Variables for year three
+  float nettoomsaetning_3;
+  float vareforbrug_3;
+  float bruttofortjeneste_3 = nettoomsaetning_3-vareforbrug_3;
+  float andre_eksterne_omk_3;
+  float personale_omk_3;
+  float resultat_foer_afskrivninger_3 = bruttofortjeneste_3-(andre_eksterne_omk_3+personale_omk_3);
+  float afskrivninger_3;
+  float resultat_primaer_drift_3 = resultat_foer_afskrivninger_3-afskrivninger_3;
+  float finansielle_ind_3;
+  float finansielle_omk_3;
+  float resultat_foer_skat_3 = resultat_primaer_drift_3+finansielle_ind_3-finansielle_omk_3;
+  float skat_af_aarets_resultat_3;
+  float aarets_resultat_3 = resultat_foer_skat_3-skat_af_aarets_resultat_3;
+
+//Variables for year four
+  float nettoomsaetning_4;
+  float vareforbrug_4;
+  float bruttofortjeneste_4 = nettoomsaetning_4-vareforbrug_4;
+  float andre_eksterne_omk_4;
+  float personale_omk_4;
+  float resultat_foer_afskrivninger_4 = bruttofortjeneste_4-(andre_eksterne_omk_4+personale_omk_4);
+  float afskrivninger_4;
+  float resultat_primaer_drift_4 = resultat_foer_afskrivninger_4-afskrivninger_4;
+  float finansielle_ind_4;
+  float finansielle_omk_4;
+  float resultat_foer_skat_4 = resultat_primaer_drift_4+finansielle_ind_4-finansielle_omk_4;
+  float skat_af_aarets_resultat_4;
+  float aarets_resultat_4 = resultat_foer_skat_4-skat_af_aarets_resultat_4;
+
+//Variables for year five
+  float nettoomsaetning_5;
+  float vareforbrug_5;
+  float bruttofortjeneste_5 = nettoomsaetning_5-vareforbrug_5;
+  float andre_eksterne_omk_5;
+  float personale_omk_5;
+  float resultat_foer_afskrivninger_5 = bruttofortjeneste_5-(andre_eksterne_omk_5+personale_omk_5);
+  float afskrivninger_5;
+  float resultat_primaer_drift_5 = resultat_foer_afskrivninger_5-afskrivninger_5;
+  float finansielle_ind_5;
+  float finansielle_omk_5;
+  float resultat_foer_skat_5 = resultat_primaer_drift_5+finansielle_ind_5-finansielle_omk_5;
+  float skat_af_aarets_resultat_5;
+  float aarets_resultat_5 = resultat_foer_skat_5-skat_af_aarets_resultat_5;
+
+  
+//Gennemsnitlige variabler
+  float gennemsnitlige_aktiver;
+  float gennemsnitlige_forpligtelser;
+  float gennemsnitlige_egenkapital = gennemsnitlige_aktiver-gennemsnitlige_forpligtelser;
+
+  //Year 1&2  
+  float gennemsnitlige_aktiver_12;
+  float gennemsnitlige_forpligtelser_12;
+  float gennemsnitlige_egenkapital_12 = gennemsnitlige_aktiver_12-gennemsnitlige_forpligtelser_12;
+  
+  //Year 2&3
+  float gennemsnitlige_aktiver_23;
+  float gennemsnitlige_forpligtelser_23;
+  float gennemsnitlige_egenkapital_23 = gennemsnitlige_aktiver_23-gennemsnitlige_forpligtelser_23;
+  
+  //Year 3&4
+  float gennemsnitlige_aktiver_34;
+  float gennemsnitlige_forpligtelser_34;
+  float gennemsnitlige_egenkapital_34 = gennemsnitlige_aktiver_34-gennemsnitlige_forpligtelser_34;
+  
+  //Year 4&5
+  float gennemsnitlige_aktiver_45;
+  float gennemsnitlige_forpligtelser_45;
+  float gennemsnitlige_egenkapital_45 = gennemsnitlige_aktiver_45-gennemsnitlige_forpligtelser_45;
+
   int years;
-  printf("Amount of years: ");
-  scanf("%d",&years);
+  printf("Number of years: ");
+  scanf("%d",&years); 
   
   if(years == 1){
-   
-  float nettoomsaetning;  
+	  
+  int format_year;
+  printf("Format year: ");
+  scanf("%d",&format_year);
+  
   printf("Input nettoomsaetning: ");
   scanf("%f", &nettoomsaetning);
-
-  float vareforbrug;
   printf("Input vareforbrug: ");
   scanf("%f", &vareforbrug);
-  
-  float bruttofortjeneste = nettoomsaetning-vareforbrug;
   printf("Input bruttofortjeneste: %f\n",bruttofortjeneste);
-    
-  float andre_eksterne_omk;
   printf("Input andre eksterne omkostninger: ");
-  scanf("%f", &andre_eksterne_omk);
-
-  float personale_omk;
+  scanf("%f", &andre_eksterne_omk);  
   printf("Input personale omkostninger: ");
   scanf("%f", &personale_omk);
-
-  float resultat_foer_afskrivninger = bruttofortjeneste-(andre_eksterne_omk+personale_omk);
   printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger);
-
-  float afskrivninger;
   printf("Input afskrivninger: ");
   scanf("%f", &afskrivninger);
-  
-  float resultat_primaer_drift = resultat_foer_afskrivninger-afskrivninger;
   printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift);  
-
-  float finansielle_ind;
   printf("Input finansielle indtaegter: ");
-  scanf("%f", &finansielle_ind);
-
-  float finansielle_omk;
+  scanf("%f", &finansielle_ind);  
   printf("Input finansielle omkostninger: ");
-  scanf("%f", &finansielle_omk);
-
-  float resultat_foer_skat = resultat_primaer_drift+finansielle_ind-finansielle_omk;
+  scanf("%f", &finansielle_omk);  
   printf("Input resultat foer skat: %f\n",resultat_foer_skat);
-  
-  float skat_af_aarets_resultat;
   printf("Input skat af aaret resultat: ");
   scanf("%f", &skat_af_aarets_resultat);
-  
-  float aarets_resultat = resultat_foer_skat-skat_af_aarets_resultat;
   printf("Input af aarets resultat: %f\n",aarets_resultat);
-
-  float gennemsnitlige_aktiver;
   printf("Input gennemsnitlige aktiver: ");
   scanf("%f",&gennemsnitlige_aktiver);
-
-  float gennemsnitlige_egenkapital;
-  printf("Input gennemsnitlige egenkapital: ");
-  scanf("%f",&gennemsnitlige_egenkapital);
-  
-  float gennemsnitlige_forpligtelser;
   printf("Input gennemsnitlige forpligtelser: ");
   scanf("%f",&gennemsnitlige_forpligtelser);
-
   /*-----------------------------------------------------*/
-
   float AG_calc = resultat_primaer_drift/gennemsnitlige_aktiver*100;
   float OG_calc = resultat_primaer_drift/nettoomsaetning*100;
   float AOH_calc = nettoomsaetning/gennemsnitlige_aktiver;
   float EKF_calc = resultat_foer_skat/gennemsnitlige_egenkapital*100;
   float GR_calc = finansielle_omk/gennemsnitlige_forpligtelser*100;
   float Gearing_calc = gennemsnitlige_forpligtelser/gennemsnitlige_egenkapital;
-  
   /*-----------------------------------------------------*/  
-  
   struct desired_table{
     char name[10];
 	float val;
   };
-  
   struct desired_table AG;
   strcpy(AG.name, "AG");
   AG.val = AG_calc;
-  
   struct desired_table OG;
   strcpy(OG.name, "OG");
   OG.val = OG_calc;
-  
   struct desired_table AOH;
   strcpy(AOH.name, "AOH");
   AOH.val = AOH_calc;
-  
   struct desired_table EKF;
   strcpy(EKF.name, "EKF");
   EKF.val = EKF_calc;
-  
   struct desired_table GR;
   strcpy(GR.name, "GR");
   GR.val = GR_calc;
-  
   struct desired_table Gearing;
   strcpy(Gearing.name, "Gearing");
   Gearing.val = Gearing_calc;
-  
 /*-------------------------------------------------------*/
-
-  printf("--------------------------------------------------------------------\n");
-  printf("\t\t\tRentabilitetsanalyse\n");
-  printf("--------------------------------------------------------------------\n");
-  
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",AG.name,AG.val);
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",OG.name,OG.val);
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",AOH.name,AOH.val);
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",EKF.name,EKF.val);
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",GR.name,GR.val);
-  printf("|---------------|\n");
-  printf("|%s\t|\t| %f |\n",Gearing.name,Gearing.val);
-  printf("|---------------|\n");
+	printf("--------------------------------------------------------------------\n");
+	printf("\t\t\tRentabilitetsanalyse\n");
+	printf("--------------------------------------------------------------------\n");
+	printf("\nYear\t\t%s\t%s\t%s\t%s\t%s\t%s",AG.name,OG.name,AOH.name,GR.name,EKF.name,Gearing.name);
+	printf("\n---------------------------------------------------------------\n");
+	printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year,AG.val,OG.val,AOH.val,GR.val,EKF.val,Gearing.val);
+/*-------------------------------------------------------*/
   }
   if(years == 2){
-   
-  float nettoomsaetning;  
+
+	  
+  int format_year_one;
+  printf("Format year one: ");
+  scanf("%d",&format_year_one);
+  
+  int format_year_two;
+  printf("Format year two: ");
+  scanf("%d",&format_year_two);
+/*-----------------------------------------------------*/
+// 			Year one 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year one\n");
   printf("Input nettoomsaetning: ");
   scanf("%f", &nettoomsaetning);
-
-  float vareforbrug;
   printf("Input vareforbrug: ");
   scanf("%f", &vareforbrug);
-  
-  float bruttofortjeneste = nettoomsaetning-vareforbrug;
   printf("Input bruttofortjeneste: %f\n",bruttofortjeneste);
-    
-  float andre_eksterne_omk;
   printf("Input andre eksterne omkostninger: ");
-  scanf("%f", &andre_eksterne_omk);
-
-  float personale_omk;
+  scanf("%f", &andre_eksterne_omk);  
   printf("Input personale omkostninger: ");
   scanf("%f", &personale_omk);
-
-  float resultat_foer_afskrivninger = bruttofortjeneste-(andre_eksterne_omk+personale_omk);
   printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger);
-
-  float afskrivninger;
   printf("Input afskrivninger: ");
   scanf("%f", &afskrivninger);
-  
-  float resultat_primaer_drift = resultat_foer_afskrivninger-afskrivninger;
   printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift);  
-
-  float finansielle_ind;
   printf("Input finansielle indtaegter: ");
-  scanf("%f", &finansielle_ind);
-
-  float finansielle_omk;
+  scanf("%f", &finansielle_ind);  
   printf("Input finansielle omkostninger: ");
-  scanf("%f", &finansielle_omk);
-
-  float resultat_foer_skat = resultat_primaer_drift+finansielle_ind-finansielle_omk;
+  scanf("%f", &finansielle_omk);  
   printf("Input resultat foer skat: %f\n",resultat_foer_skat);
-  
-  float skat_af_aarets_resultat;
   printf("Input skat af aaret resultat: ");
   scanf("%f", &skat_af_aarets_resultat);
-  
-  float aarets_resultat = resultat_foer_skat-skat_af_aarets_resultat;
   printf("Input af aarets resultat: %f\n",aarets_resultat);
-
-  float gennemsnitlige_aktiver;
-  printf("Input gennemsnitlige aktiver: ");
-  scanf("%f",&gennemsnitlige_aktiver);
-
-  float gennemsnitlige_egenkapital;
-  printf("Input gennemsnitlige egenkapital: ");
-  scanf("%f",&gennemsnitlige_egenkapital);
-  
-  float gennemsnitlige_forpligtelser;
-  printf("Input gennemsnitlige forpligtelser: ");
-  scanf("%f",&gennemsnitlige_forpligtelser);
-
-  /*-----------------------------------------------------*/
-
-  float AG_calc = resultat_primaer_drift/gennemsnitlige_aktiver*100;
+/*-----------------------------------------------------*/
+// 			Year two 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year two\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_2);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_2);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_2);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_2);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_2);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_2);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_2);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_2);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_2);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_2);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_2);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_2);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_2);
+/*-----------------------------------------------------*/
+  float a;
+  printf("\nInput aktiver year one: ");
+  scanf("%f",&a);
+  float b;
+  printf("Input aktiver year two: ");
+  scanf("%f",&b);
+  float c;
+  printf("Input forpligtelser year one: ");
+  scanf("%f",&c);
+  float d;
+  printf("Input forpligtelser year two: ");
+  scanf("%f",&d);
+  gennemsnitlige_aktiver_12 = (a+b)/2;
+  gennemsnitlige_forpligtelser_12 = (c+d)/2;
+  gennemsnitlige_egenkapital_12 = gennemsnitlige_aktiver_12-gennemsnitlige_forpligtelser_12;
+/*-----------------------------------------------------*/  
+  float AG_calc = resultat_primaer_drift/gennemsnitlige_aktiver_12*100;
   float OG_calc = resultat_primaer_drift/nettoomsaetning*100;
-  float AOH_calc = nettoomsaetning/gennemsnitlige_aktiver;
-  float EKF_calc = resultat_foer_skat/gennemsnitlige_egenkapital*100;
-  float GR_calc = finansielle_omk/gennemsnitlige_forpligtelser*100;
-  float Gearing_calc = gennemsnitlige_forpligtelser/gennemsnitlige_egenkapital;
-  
-  /*-----------------------------------------------------*/  
-  
-  struct desired_table{
-    char name[10];
-	float val;
-  };
-  
-  struct desired_table AG;
-  strcpy(AG.name, "AG");
-  AG.val = AG_calc;
-  
-  struct desired_table OG;
-  strcpy(OG.name, "OG");
-  OG.val = OG_calc;
-  
-  struct desired_table AOH;
-  strcpy(AOH.name, "AOH");
-  AOH.val = AOH_calc;
-  
-  struct desired_table EKF;
-  strcpy(EKF.name, "EKF");
-  EKF.val = EKF_calc;
-  
-  struct desired_table GR;
-  strcpy(GR.name, "GR");
-  GR.val = GR_calc;
-  
-  struct desired_table Gearing;
-  strcpy(Gearing.name, "Gearing");
-  Gearing.val = Gearing_calc;
-  
-/*-------------------------------------------------------*/
+  float AOH_calc = nettoomsaetning/gennemsnitlige_aktiver_12;
+  float EKF_calc = resultat_foer_skat/gennemsnitlige_egenkapital_12*100;
+  float GR_calc = finansielle_omk/gennemsnitlige_forpligtelser_12*100;
+  float Gearing_calc = gennemsnitlige_forpligtelser_12/gennemsnitlige_egenkapital_12; 
 
+  float AG_calc_2 = resultat_primaer_drift_2/gennemsnitlige_aktiver_12*100;
+  float OG_calc_2 = resultat_primaer_drift_2/nettoomsaetning_2*100;
+  float AOH_calc_2 = nettoomsaetning_2/gennemsnitlige_aktiver_12;
+  float EKF_calc_2 = resultat_foer_skat_2/gennemsnitlige_egenkapital_12*100;
+  float GR_calc_2 = finansielle_omk_2/gennemsnitlige_forpligtelser_12*100;
+  float Gearing_calc_2 = gennemsnitlige_forpligtelser_12/gennemsnitlige_egenkapital_12;
+/*-----------------------------------------------------*/
+// 			Display output  						   //
+/*-----------------------------------------------------*/  
   printf("--------------------------------------------------------------------\n");
   printf("\t\t\tRentabilitetsanalyse\n");
   printf("--------------------------------------------------------------------\n");
-  
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",AG.name,AG.val);
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",OG.name,OG.val);
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",AOH.name,AOH.val);
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",EKF.name,EKF.val);
-  printf("|---------------|\n");
-  printf("|%s\t\t|\t| %f |\n",GR.name,GR.val);
-  printf("|---------------|\n");
-  printf("|%s\t|\t| %f |\n",Gearing.name,Gearing.val);
-  printf("|---------------|\n");
+  printf("\nYear\tAG\tOG\tAOH\tGR\tEKF\tGearing");
+  printf("\n---------------------------------------------------------------\n");
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_one,AG_calc,OG_calc,AOH_calc,GR_calc,EKF_calc,Gearing_calc);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_two,AG_calc_2,OG_calc_2,AOH_calc_2,GR_calc_2,EKF_calc_2,Gearing_calc_2);
+/*-------------------------------------------------------*/
   }
+  if(years == 3){
   
+  int format_year_one;
+  int format_year_two;
+  int format_year_three;
   
+  printf("Format year one: ");
+  scanf("%d",&format_year_one);
+  printf("Format year two: ");
+  scanf("%d",&format_year_two);
+  printf("Format  year three: ");
+  scanf("%d",&format_year_three);
+/*-----------------------------------------------------*/
+// 			Year one 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year one\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat);
+  printf("Input af aarets resultat: %f\n",aarets_resultat);
+/*-----------------------------------------------------*/
+// 			Year two 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year two\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_2);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_2);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_2);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_2);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_2);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_2);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_2);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_2);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_2);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_2);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_2);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_2);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_2);
+/*-----------------------------------------------------*/
+// 			Year three 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year three\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_3);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_3);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_3);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_3);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_3);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_3);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_3);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_3);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_3);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_3);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_3);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_3);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_3);  
+/*-----------------------------------------------------*/
+// 			Gennemsnitlige aktiver,forp,egenkapital    //
+/*-----------------------------------------------------*/  
+  float a;
+  printf("\nInput aktiver year one: ");
+  scanf("%f",&a);
+  float b;
+  printf("Input aktiver year two: ");
+  scanf("%f",&b);
+  float c;
+  printf("Input forpligtelser year one: ");
+  scanf("%f",&c);
+  float d;
+  printf("Input forpligtelser year two: ");
+  scanf("%f",&d);
+  gennemsnitlige_aktiver_12 = (a+b)/2;
+  gennemsnitlige_forpligtelser_12 = (c+d)/2;
+  gennemsnitlige_egenkapital_12 = gennemsnitlige_aktiver_12-gennemsnitlige_forpligtelser_12;
   
-  system("PAUSE"); 
+  float e;
+  printf("\nInput aktiver year two: ");
+  scanf("%f",&e);
+  float f;
+  printf("Input aktiver year three: ");
+  scanf("%f",&f);
+  float g;
+  printf("Input forpligtelser year two: ");
+  scanf("%f",&g);
+  float h;
+  printf("Input forpligtelser year three: ");
+  scanf("%f",&h);
+  gennemsnitlige_aktiver_23 = (e+f)/2;
+  gennemsnitlige_forpligtelser_23 = (g+h)/2;
+  gennemsnitlige_egenkapital_23 = gennemsnitlige_aktiver_23-gennemsnitlige_forpligtelser_23;
+/*-----------------------------------------------------*/  
+  float AG_calc = resultat_primaer_drift/gennemsnitlige_aktiver_12*100;
+  float OG_calc = resultat_primaer_drift/nettoomsaetning*100;
+  float AOH_calc = nettoomsaetning/gennemsnitlige_aktiver_12;
+  float EKF_calc = resultat_foer_skat/gennemsnitlige_egenkapital_12*100;
+  float GR_calc = finansielle_omk/gennemsnitlige_forpligtelser_12*100;
+  float Gearing_calc = gennemsnitlige_forpligtelser_12/gennemsnitlige_egenkapital_12; 
+
+  float AG_calc_2 = resultat_primaer_drift_2/gennemsnitlige_aktiver_12*100;
+  float OG_calc_2 = resultat_primaer_drift_2/nettoomsaetning_2*100;
+  float AOH_calc_2 = nettoomsaetning_2/gennemsnitlige_aktiver_12;
+  float EKF_calc_2 = resultat_foer_skat_2/gennemsnitlige_egenkapital_12*100;
+  float GR_calc_2 = finansielle_omk_2/gennemsnitlige_forpligtelser_12*100;
+  float Gearing_calc_2 = gennemsnitlige_forpligtelser_12/gennemsnitlige_egenkapital_12;
+  
+  float AG_calc_3 = resultat_primaer_drift_3/gennemsnitlige_aktiver_23*100;
+  float OG_calc_3 = resultat_primaer_drift_3/nettoomsaetning_3*100;
+  float AOH_calc_3 = nettoomsaetning_3/gennemsnitlige_aktiver_23;
+  float EKF_calc_3 = resultat_foer_skat_3/gennemsnitlige_egenkapital_23*100;
+  float GR_calc_3 = finansielle_omk_3/gennemsnitlige_forpligtelser_23*100;
+  float Gearing_calc_3 = gennemsnitlige_forpligtelser_23/gennemsnitlige_egenkapital_23;  
+/*-----------------------------------------------------*/
+// 			Display output  						   //
+/*-----------------------------------------------------*/  
+  printf("--------------------------------------------------------------------\n");
+  printf("\t\t\tRentabilitetsanalyse\n");
+  printf("--------------------------------------------------------------------\n");
+  printf("\nYear\tAG\tOG\tAOH\tGR\tEKF\tGearing");
+  printf("\n---------------------------------------------------------------\n");
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_one,AG_calc,OG_calc,AOH_calc,GR_calc,EKF_calc,Gearing_calc);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_two,AG_calc_2,OG_calc_2,AOH_calc_2,GR_calc_2,EKF_calc_2,Gearing_calc_2);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_three,AG_calc_3,OG_calc_3,AOH_calc_3,GR_calc_3,EKF_calc_3,Gearing_calc_3);
+/*-------------------------------------------------------*/
+  }
+  if(years == 4){
+  
+  int format_year_one;
+  int format_year_two;
+  int format_year_three;
+  int format_year_four;
+  
+  printf("Format year one: ");
+  scanf("%d",&format_year_one);
+  printf("Format year two: ");
+  scanf("%d",&format_year_two);
+  printf("Format  year three: ");
+  scanf("%d",&format_year_three);
+  printf("Format year four: ");
+  scanf("%d",&format_year_four);
+/*-----------------------------------------------------*/
+// 			Year one 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year one\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat);
+  printf("Input af aarets resultat: %f\n",aarets_resultat);
+/*-----------------------------------------------------*/
+// 			Year two 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year two\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_2);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_2);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_2);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_2);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_2);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_2);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_2);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_2);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_2);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_2);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_2);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_2);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_2);
+/*-----------------------------------------------------*/
+// 			Year three 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year three\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_3);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_3);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_3);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_3);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_3);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_3);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_3);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_3);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_3);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_3);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_3);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_3);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_3);  
+/*-----------------------------------------------------*/
+// 			Year four 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year four\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_4);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_4);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_4);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_4);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_4);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_4);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_4);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_4);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_4);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_4);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_4);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_4);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_4);
+/*-----------------------------------------------------*/
+// 			Gennemsnitlige aktiver,forp,egenkapital    //
+/*-----------------------------------------------------*/  
+  float a;
+  printf("\nInput aktiver year one: ");
+  scanf("%f",&a);
+  float b;
+  printf("Input aktiver year two: ");
+  scanf("%f",&b);
+  float c;
+  printf("Input forpligtelser year one: ");
+  scanf("%f",&c);
+  float d;
+  printf("Input forpligtelser year two: ");
+  scanf("%f",&d);
+  gennemsnitlige_aktiver_12 = (a+b)/2;
+  gennemsnitlige_forpligtelser_12 = (c+d)/2;
+  gennemsnitlige_egenkapital_12 = gennemsnitlige_aktiver_12-gennemsnitlige_forpligtelser_12;
+  
+  float e;
+  printf("\nInput aktiver year two: ");
+  scanf("%f",&e);
+  float f;
+  printf("Input aktiver year three: ");
+  scanf("%f",&f);
+  float g;
+  printf("Input forpligtelser year two: ");
+  scanf("%f",&g);
+  float h;
+  printf("Input forpligtelser year three: ");
+  scanf("%f",&h);
+  gennemsnitlige_aktiver_23 = (e+f)/2;
+  gennemsnitlige_forpligtelser_23 = (g+h)/2;
+  gennemsnitlige_egenkapital_23 = gennemsnitlige_aktiver_23-gennemsnitlige_forpligtelser_23;
+  
+  float i;
+  printf("\nInput aktiver year three: ");
+  scanf("%f",&i);
+  float j;
+  printf("Input aktiver year four: ");
+  scanf("%f",&j);
+  float k;
+  printf("Input forpligtelser year three: ");
+  scanf("%f",&k);
+  float l;
+  printf("Input forpligtelser year four: ");
+  scanf("%f",&l);
+  gennemsnitlige_aktiver_34 = (i+j)/2;
+  gennemsnitlige_forpligtelser_34 = (k+l)/2;
+  gennemsnitlige_egenkapital_34 = gennemsnitlige_aktiver_34-gennemsnitlige_forpligtelser_34;
+  
+/*-----------------------------------------------------*/  
+  float AG_calc = resultat_primaer_drift/gennemsnitlige_aktiver_12*100;
+  float OG_calc = resultat_primaer_drift/nettoomsaetning*100;
+  float AOH_calc = nettoomsaetning/gennemsnitlige_aktiver_12;
+  float EKF_calc = resultat_foer_skat/gennemsnitlige_egenkapital_12*100;
+  float GR_calc = finansielle_omk/gennemsnitlige_forpligtelser_12*100;
+  float Gearing_calc = gennemsnitlige_forpligtelser_12/gennemsnitlige_egenkapital_12; 
+
+  float AG_calc_2 = resultat_primaer_drift_2/gennemsnitlige_aktiver_12*100;
+  float OG_calc_2 = resultat_primaer_drift_2/nettoomsaetning_2*100;
+  float AOH_calc_2 = nettoomsaetning_2/gennemsnitlige_aktiver_12;
+  float EKF_calc_2 = resultat_foer_skat_2/gennemsnitlige_egenkapital_12*100;
+  float GR_calc_2 = finansielle_omk_2/gennemsnitlige_forpligtelser_12*100;
+  float Gearing_calc_2 = gennemsnitlige_forpligtelser_12/gennemsnitlige_egenkapital_12;
+  
+  float AG_calc_3 = resultat_primaer_drift_3/gennemsnitlige_aktiver_23*100;
+  float OG_calc_3 = resultat_primaer_drift_3/nettoomsaetning_3*100;
+  float AOH_calc_3 = nettoomsaetning_3/gennemsnitlige_aktiver_23;
+  float EKF_calc_3 = resultat_foer_skat_3/gennemsnitlige_egenkapital_23*100;
+  float GR_calc_3 = finansielle_omk_3/gennemsnitlige_forpligtelser_23*100;
+  float Gearing_calc_3 = gennemsnitlige_forpligtelser_23/gennemsnitlige_egenkapital_23;  
+  
+  float AG_calc_4 = resultat_primaer_drift_4/gennemsnitlige_aktiver_34*100;
+  float OG_calc_4 = resultat_primaer_drift_4/nettoomsaetning_4*100;
+  float AOH_calc_4 = nettoomsaetning_4/gennemsnitlige_aktiver_34;
+  float EKF_calc_4 = resultat_foer_skat_4/gennemsnitlige_egenkapital_34*100;
+  float GR_calc_4 = finansielle_omk_4/gennemsnitlige_forpligtelser_34*100;
+  float Gearing_calc_4 = gennemsnitlige_forpligtelser_34/gennemsnitlige_egenkapital_34;
+/*-----------------------------------------------------*/
+// 			Display output  						   //
+/*-----------------------------------------------------*/  
+  printf("--------------------------------------------------------------------\n");
+  printf("\t\t\tRentabilitetsanalyse\n");
+  printf("--------------------------------------------------------------------\n");
+  printf("\nYear\tAG\tOG\tAOH\tGR\tEKF\tGearing");
+  printf("\n---------------------------------------------------------------\n");
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_one,AG_calc,OG_calc,AOH_calc,GR_calc,EKF_calc,Gearing_calc);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_two,AG_calc_2,OG_calc_2,AOH_calc_2,GR_calc_2,EKF_calc_2,Gearing_calc_2);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_three,AG_calc_3,OG_calc_3,AOH_calc_3,GR_calc_3,EKF_calc_3,Gearing_calc_3);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_four,AG_calc_4,OG_calc_4,AOH_calc_4,GR_calc_4,EKF_calc_4,Gearing_calc_4);
+/*-------------------------------------------------------*/
+  }
+  if(years == 5){
+  
+  int format_year_one;
+  int format_year_two;
+  int format_year_three;
+  int format_year_four;
+  int format_year_five;
+  
+  printf("Format year one: ");
+  scanf("%d",&format_year_one);
+  printf("Format year two: ");
+  scanf("%d",&format_year_two);
+  printf("Format  year three: ");
+  scanf("%d",&format_year_three);
+  printf("Format year four: ");
+  scanf("%d",&format_year_four);
+  printf("Format year 5: ");
+  scanf("%d",&format_year_five);
+/*-----------------------------------------------------*/
+// 			Year one 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year one\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat);
+  printf("Input af aarets resultat: %f\n",aarets_resultat);
+/*-----------------------------------------------------*/
+// 			Year two 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year two\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_2);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_2);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_2);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_2);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_2);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_2);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_2);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_2);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_2);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_2);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_2);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_2);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_2);
+/*-----------------------------------------------------*/
+// 			Year three 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year three\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_3);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_3);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_3);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_3);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_3);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_3);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_3);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_3);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_3);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_3);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_3);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_3);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_3);  
+/*-----------------------------------------------------*/
+// 			Year four 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year four\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_4);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_4);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_4);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_4);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_4);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_4);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_4);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_4);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_4);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_4);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_4);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_4);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_4);
+/*-----------------------------------------------------*/
+// 			Year five 								   //
+/*-----------------------------------------------------*/  
+  printf("\nData for year five\n");
+  printf("Input nettoomsaetning: ");
+  scanf("%f", &nettoomsaetning_5);
+  printf("Input vareforbrug: ");
+  scanf("%f", &vareforbrug_5);
+  printf("Input bruttofortjeneste: %f\n",bruttofortjeneste_5);
+  printf("Input andre eksterne omkostninger: ");
+  scanf("%f", &andre_eksterne_omk_5);  
+  printf("Input personale omkostninger: ");
+  scanf("%f", &personale_omk_5);
+  printf("Input resultat foer afskrivninger: %f\n",resultat_foer_afskrivninger_5);
+  printf("Input afskrivninger: ");
+  scanf("%f", &afskrivninger_5);
+  printf("Input resultat af primaer drift: %f\n",resultat_primaer_drift_5);  
+  printf("Input finansielle indtaegter: ");
+  scanf("%f", &finansielle_ind_5);  
+  printf("Input finansielle omkostninger: ");
+  scanf("%f", &finansielle_omk_5);  
+  printf("Input resultat foer skat: %f\n",resultat_foer_skat_5);
+  printf("Input skat af aaret resultat: ");
+  scanf("%f", &skat_af_aarets_resultat_5);
+  printf("Input af aarets resultat: %f\n",aarets_resultat_5);
+/*-----------------------------------------------------*/
+// 			Gennemsnitlige aktiver,forp,egenkapital    //
+/*-----------------------------------------------------*/  
+  float a;
+  printf("\nInput aktiver year one: ");
+  scanf("%f",&a);
+  float b;
+  printf("Input aktiver year two: ");
+  scanf("%f",&b);
+  float c;
+  printf("Input forpligtelser year one: ");
+  scanf("%f",&c);
+  float d;
+  printf("Input forpligtelser year two: ");
+  scanf("%f",&d);
+  gennemsnitlige_aktiver_12 = (a+b)/2;
+  gennemsnitlige_forpligtelser_12 = (c+d)/2;
+  gennemsnitlige_egenkapital_12 = gennemsnitlige_aktiver_12-gennemsnitlige_forpligtelser_12;
+  
+  float e;
+  printf("\nInput aktiver year two: ");
+  scanf("%f",&e);
+  float f;
+  printf("Input aktiver year three: ");
+  scanf("%f",&f);
+  float g;
+  printf("Input forpligtelser year two: ");
+  scanf("%f",&g);
+  float h;
+  printf("Input forpligtelser year three: ");
+  scanf("%f",&h);
+  gennemsnitlige_aktiver_23 = (e+f)/2;
+  gennemsnitlige_forpligtelser_23 = (g+h)/2;
+  gennemsnitlige_egenkapital_23 = gennemsnitlige_aktiver_23-gennemsnitlige_forpligtelser_23;
+  
+  float i;
+  printf("\nInput aktiver year three: ");
+  scanf("%f",&i);
+  float j;
+  printf("Input aktiver year four: ");
+  scanf("%f",&j);
+  float k;
+  printf("Input forpligtelser year three: ");
+  scanf("%f",&k);
+  float l;
+  printf("Input forpligtelser year four: ");
+  scanf("%f",&l);
+  gennemsnitlige_aktiver_34 = (i+j)/2;
+  gennemsnitlige_forpligtelser_34 = (k+l)/2;
+  gennemsnitlige_egenkapital_34 = gennemsnitlige_aktiver_34-gennemsnitlige_forpligtelser_34;
+  
+  float m;
+  printf("\nInput aktiver year four: ");
+  scanf("%f",&m);
+  float n;
+  printf("Input aktiver year five: ");
+  scanf("%f",&n);
+  float o;
+  printf("Input forpligtelser year four: ");
+  scanf("%f",&o);
+  float p;
+  printf("Input forpligtelser year five: ");
+  scanf("%f",&p);
+  gennemsnitlige_aktiver_45 = (m+n)/2;
+  gennemsnitlige_forpligtelser_45 = (o+p)/2;
+  gennemsnitlige_egenkapital_45 = gennemsnitlige_aktiver_45-gennemsnitlige_forpligtelser_45;
+  
+/*-----------------------------------------------------*/  
+  float AG_calc = resultat_primaer_drift/gennemsnitlige_aktiver_12*100;
+  float OG_calc = resultat_primaer_drift/nettoomsaetning*100;
+  float AOH_calc = nettoomsaetning/gennemsnitlige_aktiver_12;
+  float EKF_calc = resultat_foer_skat/gennemsnitlige_egenkapital_12*100;
+  float GR_calc = finansielle_omk/gennemsnitlige_forpligtelser_12*100;
+  float Gearing_calc = gennemsnitlige_forpligtelser_12/gennemsnitlige_egenkapital_12; 
+
+  float AG_calc_2 = resultat_primaer_drift_2/gennemsnitlige_aktiver_12*100;
+  float OG_calc_2 = resultat_primaer_drift_2/nettoomsaetning_2*100;
+  float AOH_calc_2 = nettoomsaetning_2/gennemsnitlige_aktiver_12;
+  float EKF_calc_2 = resultat_foer_skat_2/gennemsnitlige_egenkapital_12*100;
+  float GR_calc_2 = finansielle_omk_2/gennemsnitlige_forpligtelser_12*100;
+  float Gearing_calc_2 = gennemsnitlige_forpligtelser_12/gennemsnitlige_egenkapital_12;
+  
+  float AG_calc_3 = resultat_primaer_drift_3/gennemsnitlige_aktiver_23*100;
+  float OG_calc_3 = resultat_primaer_drift_3/nettoomsaetning_3*100;
+  float AOH_calc_3 = nettoomsaetning_3/gennemsnitlige_aktiver_23;
+  float EKF_calc_3 = resultat_foer_skat_3/gennemsnitlige_egenkapital_23*100;
+  float GR_calc_3 = finansielle_omk_3/gennemsnitlige_forpligtelser_23*100;
+  float Gearing_calc_3 = gennemsnitlige_forpligtelser_23/gennemsnitlige_egenkapital_23;  
+  
+  float AG_calc_4 = resultat_primaer_drift_4/gennemsnitlige_aktiver_34*100;
+  float OG_calc_4 = resultat_primaer_drift_4/nettoomsaetning_4*100;
+  float AOH_calc_4 = nettoomsaetning_4/gennemsnitlige_aktiver_34;
+  float EKF_calc_4 = resultat_foer_skat_4/gennemsnitlige_egenkapital_34*100;
+  float GR_calc_4 = finansielle_omk_4/gennemsnitlige_forpligtelser_34*100;
+  float Gearing_calc_4 = gennemsnitlige_forpligtelser_34/gennemsnitlige_egenkapital_34;
+
+  float AG_calc_5 = resultat_primaer_drift_5/gennemsnitlige_aktiver_45*100;
+  float OG_calc_5 = resultat_primaer_drift_5/nettoomsaetning_5*100;
+  float AOH_calc_5 = nettoomsaetning_5/gennemsnitlige_aktiver_45;
+  float EKF_calc_5 = resultat_foer_skat_5/gennemsnitlige_egenkapital_45*100;
+  float GR_calc_5 = finansielle_omk_5/gennemsnitlige_forpligtelser_45*100;
+  float Gearing_calc_5 = gennemsnitlige_forpligtelser_45/gennemsnitlige_egenkapital_45;  
+/*-----------------------------------------------------*/
+// 			Display output  						   //
+/*-----------------------------------------------------*/  
+  printf("--------------------------------------------------------------------\n");
+  printf("\t\t\tRentabilitetsanalyse\n");
+  printf("--------------------------------------------------------------------\n");
+  printf("\nYear\tAG\tOG\tAOH\tGR\tEKF\tGearing");
+  printf("\n---------------------------------------------------------------\n");
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_one,AG_calc,OG_calc,AOH_calc,GR_calc,EKF_calc,Gearing_calc);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_two,AG_calc_2,OG_calc_2,AOH_calc_2,GR_calc_2,EKF_calc_2,Gearing_calc_2);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_three,AG_calc_3,OG_calc_3,AOH_calc_3,GR_calc_3,EKF_calc_3,Gearing_calc_3);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_four,AG_calc_4,OG_calc_4,AOH_calc_4,GR_calc_4,EKF_calc_4,Gearing_calc_4);
+  printf("%d\t%g\t%g\t%g\t%g\t%g\t%g\n",format_year_five,AG_calc_5,OG_calc_5,AOH_calc_5,GR_calc_5,EKF_calc_5,Gearing_calc_5);
+/*-------------------------------------------------------*/
+  }
+  system("PAUSE");
 }
-
-
