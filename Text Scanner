@@ -1,0 +1,28 @@
+def find_item(source,item):
+  """Scans a given text for a word, returns a list with results"""
+  items = []
+
+  if source.find(item) != -1:
+    while(source.find(item) != -1):
+      #int
+      found = source.find(item)
+
+      #string
+      update = source[found:]
+      #int
+      start = update.find(item)
+
+      #int
+      end = update.find(" ")
+      #string
+      item = update[start:end]
+
+      items.append(item)
+      source = update[end:]
+    return items
+  else:
+    return "No items found."
+    
+text = "Jeg synes at vejret er godt og lige om lidt er det påske. Det bliver en virklig fed årstid da jeg har fødselsdag d. 10 April hvor jeg håber på at få mange gode gaver. På samme tid er jeg ved at udvikle software og jeg har mange ideer i baghovedet!."
+
+print(find_item(text,"vejret"))
